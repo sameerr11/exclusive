@@ -41,15 +41,22 @@
   color: #888;
 }
 
+/* App Component Styles */
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 main {
   flex: 1;
   padding-top: 80px; /* Account for fixed navbar */
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Ensure smooth scrolling behavior */
