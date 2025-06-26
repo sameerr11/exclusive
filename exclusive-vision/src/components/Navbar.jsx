@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <img src="/src/assets/logo.png" alt="Exclusive Vision" className="logo-img" />
+          <img src="/logo.png" alt="Exclusive Vision" className="logo-img" />
           <span className="logo-text">Exclusive Vision</span>
         </div>
         
