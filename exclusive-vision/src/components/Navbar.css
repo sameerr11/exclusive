@@ -23,12 +23,189 @@
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.nav-logo:hover {
+  transform: scale(1.02);
+}
+
+/* Logo Container with Advanced Effects */
+.logo-container {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: logoFloat 4s ease-in-out infinite;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(138, 175, 206, 0.2));
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating Animation */
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+}
+
+/* Glow Ring Effect */
+.logo-glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(45deg, rgba(138, 175, 206, 0.3), transparent, rgba(138, 175, 206, 0.3));
+  animation: ringGlow 3s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes ringGlow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Orbiting Particles */
+.logo-particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  animation: orbit 8s linear infinite;
+}
+
+.particle-1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  animation-delay: 2s;
+}
+
+.particle-3 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 4s;
+}
+
+.particle-4 {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  animation-delay: 6s;
+}
+
+@keyframes orbit {
+  0% {
+    box-shadow: 0 0 0 rgba(138, 175, 206, 0.4);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 8px rgba(138, 175, 206, 0.8);
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(138, 175, 206, 0.4);
+    opacity: 1;
+  }
+}
+
+/* Scanner Line Effect */
+.logo-scanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  animation: scan 4s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-10px) scaleX(0);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(10px) scaleX(1);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(50px) scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(70px) scaleX(0);
+    opacity: 0;
+  }
+}
+
+/* Logo Image */
 .logo-img {
   height: 55px;
   width: auto;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 10px rgba(138, 175, 206, 0.3));
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover .logo-img {
+  filter: drop-shadow(0 0 15px rgba(138, 175, 206, 0.6));
+  transform: scale(1.05);
+}
+
+/* Text Container */
+.logo-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .logo-text {
@@ -36,6 +213,16 @@
   font-family: var(--heading-font);
   font-size: 2.1rem;
   font-weight: 600;
+  animation: textGlow 5s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 90%, 100% {
+    text-shadow: none;
+  }
+  5%, 85% {
+    text-shadow: 0 0 10px rgba(138, 175, 206, 0.5);
+  }
 }
 
 .nav-menu {
@@ -88,16 +275,42 @@
     padding: 1rem 0;
   }
 
+  .logo-container {
+    height: 55px;
+    width: 55px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(138, 175, 206, 0.2));
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  }
+
   .logo-img {
     height: 50px;
+  }
+
+  .logo-glow-ring {
+    width: 65px;
+    height: 65px;
+  }
+
+  .logo-particles {
+    width: 70px;
+    height: 70px;
+  }
+
+  .particle {
+    width: 3px;
+    height: 3px;
   }
 
   .logo-text {
     font-size: 1.8rem;
   }
 
+
+
   .nav-logo {
-    gap: 10px;
+    gap: 12px;
   }
 
   .nav-menu {
@@ -146,15 +359,51 @@
 }
 
 @media screen and (max-width: 480px) {
+  .logo-container {
+    height: 50px;
+    width: 50px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(138, 175, 206, 0.2));
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
   .logo-img {
     height: 45px;
+  }
+
+  .logo-glow-ring {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-particles {
+    width: 65px;
+    height: 65px;
+  }
+
+  .particle {
+    width: 2px;
+    height: 2px;
   }
 
   .logo-text {
     font-size: 1.6rem;
   }
 
+
+
   .nav-logo {
-    gap: 8px;
+    gap: 10px;
   }
+
+  /* Reduce animations on mobile for performance */
+  .logo-container {
+    animation-duration: 6s;
+  }
+
+  .logo-glow-ring {
+    animation-duration: 4s;
+  }
+}
 } 

@@ -20,8 +20,20 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <img src="/logo.png" alt="Exclusive Vision" className="logo-img" />
-          <span className="logo-text">Exclusive Vision</span>
+          <div className="logo-container">
+            <div className="logo-particles">
+              <div className="particle particle-1"></div>
+              <div className="particle particle-2"></div>
+              <div className="particle particle-3"></div>
+              <div className="particle particle-4"></div>
+            </div>
+            <div className="logo-glow-ring"></div>
+            <img src="/logo.png" alt="Exclusive Vision" className="logo-img" />
+            <div className="logo-scanner"></div>
+          </div>
+          <div className="logo-text-container">
+            <span className="logo-text">Exclusive Vision</span>
+          </div>
         </div>
         
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
