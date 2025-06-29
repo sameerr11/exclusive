@@ -6,26 +6,28 @@ const About = () => {
       <div className="container">
         {/* About Us Section */}
         <div className="about-content">
-          <div className="about-image">
-            <div className="image-placeholder">
-              <span>About Exclusive Vision</span>
+          <div className="about-card">
+            <div className="about-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L13.2 8.5L20 9L14 15L15.8 21L12 18L8.2 21L10 15L4 9L10.8 8.5L12 2Z" stroke="currentColor" strokeWidth="2"/>
+              </svg>
             </div>
-          </div>
-          <div className="about-text">
             <h2>About Us</h2>
-            <p>
-              Founded in Tripoli, Lebanon, Exclusive Vision is a premier end-to-end IT solutions company, 
-              redefining the digital experience across the globe. We specialize in delivering cutting-edge, 
-              customized, and scalable technology solutions that drive innovation and business success.
-            </p>
-            <p>
-              Whether you're a startup, SME, or enterprise, Exclusive Vision empowers you to lead in your 
-              digital transformation journey.
-            </p>
-            <p>
-              With a passionate team of developers, designers, analysts, strategists, and certified professionals, 
-              we bring technology and creativity together to build the future.
-            </p>
+            <div className="about-description">
+              <p>
+                <strong>Founded in Tripoli, Lebanon</strong>, Exclusive Vision is a premier end-to-end IT solutions company, 
+                redefining the digital experience across the globe. We specialize in delivering cutting-edge, 
+                customized, and scalable technology solutions that drive innovation and business success.
+              </p>
+              <p>
+                Whether you're a startup, SME, or enterprise, Exclusive Vision empowers you to lead in your 
+                digital transformation journey.
+              </p>
+              <p>
+                With a passionate team of developers, designers, analysts, strategists, and certified professionals, 
+                we bring technology and creativity together to build the future.
+              </p>
+            </div>
           </div>
         </div>
 
