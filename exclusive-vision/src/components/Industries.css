@@ -94,6 +94,27 @@
   color: var(--white);
   animation: rotate 20s linear infinite;
   box-shadow: 0 10px 30px rgba(36, 37, 109, 0.2);
+  position: relative;
+}
+
+.globe-icon::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(138, 175, 206, 0.3), transparent, rgba(36, 37, 109, 0.3));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: orbitRing 8s linear infinite reverse;
+}
+
+@keyframes orbitRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .globe-icon svg {
@@ -122,6 +143,30 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+}
+
+.industry-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(138, 175, 206, 0.1), transparent);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: industriesPulse 4s infinite ease-in-out;
+}
+
+@keyframes industriesPulse {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.5);
+    opacity: 0.8;
+  }
 }
 
 .industry-card:hover {
@@ -156,6 +201,18 @@
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
   transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 0 0 rgba(138, 175, 206, 0.4);
+  animation: iconGlow 3s infinite ease-in-out;
+}
+
+@keyframes iconGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(138, 175, 206, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(138, 175, 206, 0.8);
+  }
 }
 
 .industry-card:hover .industry-icon {

@@ -1,5 +1,32 @@
 .about {
   background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(138, 175, 206, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(36, 37, 109, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(138, 175, 206, 0.01) 0%, transparent 50%);
+  background-size: 800px 800px, 600px 600px, 400px 400px;
+  animation: aboutTechShift 40s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes aboutTechShift {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, -100% 100%, 50% -50%;
+  }
 }
 
 .about-content {
@@ -53,6 +80,16 @@
   backdrop-filter: blur(10px);
   position: relative;
   z-index: 1;
+  animation: iconFloat 4s infinite ease-in-out;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
 }
 
 .about-icon svg {
@@ -155,6 +192,18 @@
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
+  animation: cardIconPulse 3s infinite ease-in-out;
+}
+
+@keyframes cardIconPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
 }
 
 .card-icon svg {
